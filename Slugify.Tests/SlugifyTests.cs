@@ -83,7 +83,7 @@ namespace Slugify.Tests
               'ý': 'y', 'þ': 'th', 'ÿ': 'y', 'ẞ': 'SS'
             }";
 
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(charMap);
+            var dictionary = JsonConvert.DeserializeObject<Dictionary<char, string>>(charMap);
 
             foreach (var s in dictionary)
             {

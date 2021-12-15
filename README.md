@@ -1,0 +1,2 @@
+# Slugify
+Slugifies a string

@@ -1,2 +1,2 @@
 # Slugify
-Slugifies a string
+ Slugifies a string

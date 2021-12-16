@@ -1,7 +1,7 @@
-# Slugify
+# SlugifyNet
 > Converts a string into a slug.
 
-[![Nuget](https://img.shields.io/nuget/v/Sendbird)](https://www.nuget.org/packages/Sendbird)
+[![Nuget](https://img.shields.io/nuget/v/SlugifyNet)](https://www.nuget.org/packages/SlugifyNet)
 [![.NET Standard](https://img.shields.io/badge/.NET%20Standard-%3E%3D%202.0-red.svg)](#)
 
 ## Description
@@ -14,19 +14,19 @@ Created by referring to https://github.com/simov/slugify
 Using the [.NET Core command-line interface (CLI) tools]
 
 ```sh
-dotnet add package Slugify
+dotnet add package SlugifyNet
 ```
 
 Using the [NuGet Command Line Interface (CLI)]
 
 ```sh
-nuget install Slugify
+nuget install SlugifyNet
 ```
 
 Using the [Package Manager Console]
 
 ```powershell
-Install-Package Slugify
+Install-Package SlugifyNet
 ```
 
 ## Usage

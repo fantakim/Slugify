@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Slugify\Slugify.csproj" />
+    <ProjectReference Include="..\SlugifyNet\SlugifyNet.csproj" />
   </ItemGroup>
 
 </Project>

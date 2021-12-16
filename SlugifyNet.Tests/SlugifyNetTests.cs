@@ -1,9 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace Slugify.Tests
+namespace SlugifyNet.Tests
 {
     public class SlugifyTests
     {
@@ -69,27 +68,26 @@ namespace Slugify.Tests
 
         [Fact]
         public void replace_latin_chars()
-        {
-            var charMap = @"{
-              'À': 'A', 'Á': 'A', 'Â': 'A', 'Ã': 'A', 'Ä': 'A', 'Å': 'A', 'Æ': 'AE',
-              'Ç': 'C', 'È': 'E', 'É': 'E', 'Ê': 'E', 'Ë': 'E', 'Ì': 'I', 'Í': 'I',
-              'Î': 'I', 'Ï': 'I', 'Ð': 'D', 'Ñ': 'N', 'Ò': 'O', 'Ó': 'O', 'Ô': 'O',
-              'Õ': 'O', 'Ö': 'O', 'Ő': 'O', 'Ø': 'O', 'Ù': 'U', 'Ú': 'U', 'Û': 'U',
-              'Ü': 'U', 'Ű': 'U', 'Ý': 'Y', 'Þ': 'TH', 'ß': 'ss', 'à': 'a', 'á': 'a',
-              'â': 'a', 'ã': 'a', 'ä': 'a', 'å': 'a', 'æ': 'ae', 'ç': 'c', 'è': 'e',
-              'é': 'e', 'ê': 'e', 'ë': 'e', 'ì': 'i', 'í': 'i', 'î': 'i', 'ï': 'i',
-              'ð': 'd', 'ñ': 'n', 'ò': 'o', 'ó': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o',
-              'ő': 'o', 'ø': 'o', 'ù': 'u', 'ú': 'u', 'û': 'u', 'ü': 'u', 'ű': 'u',
-              'ý': 'y', 'þ': 'th', 'ÿ': 'y', 'ẞ': 'SS'
-            }";
-
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<char, string>>(charMap);
-
-            foreach (var s in dictionary)
+        {   
+            var characters = new Dictionary<string, string>
             {
-                var text = "foo " + s.Key + " bar baz";
+                { "À", "A" }, { "Á", "A" }, { "Â", "A" }, { "Ã", "A" }, { "Ä", "A" }, { "Å", "A" }, { "Æ", "AE" },
+                { "Ç", "C" }, { "È", "E" }, { "É", "E" }, { "Ê", "E" }, { "Ë", "E" }, { "Ì", "I" }, { "Í", "I" },
+                { "Î", "I" }, { "Ï", "I" }, { "Ð", "D" }, { "Ñ", "N" }, { "Ò", "O" }, { "Ó", "O" }, { "Ô", "O" },
+                { "Õ", "O" }, { "Ö", "O" }, { "Ő", "O" }, { "Ø", "O" }, { "Ù", "U" }, { "Ú", "U" }, { "Û", "U" },
+                { "Ü", "U" }, { "Ű", "U" }, { "Ý", "Y" }, { "Þ", "TH" }, { "ß", "ss" }, { "à", "a" }, { "á", "a" },
+                { "â", "a" }, { "ã", "a" }, { "ä", "a" }, { "å", "a" }, { "æ", "ae" }, { "ç", "c" }, { "è", "e" },
+                { "é", "e" }, { "ê", "e" }, { "ë", "e" }, { "ì", "i" }, { "í", "i" }, { "î", "i" }, { "ï", "i" },
+                { "ð", "d" }, { "ñ", "n" }, { "ò", "o" }, { "ó", "o" }, { "ô", "o" }, { "õ", "o" }, { "ö", "o" },
+                { "ő", "o" }, { "ø", "o" }, { "ù", "u" }, { "ú", "u" }, { "û", "u" }, { "ü", "u" }, { "ű", "u" },
+                { "ý", "y" }, { "þ", "th" }, { "ÿ", "y" }, { "ẞ", "SS" }
+            };
+
+            foreach (var c in characters)
+            {
+                var text = "foo " + c.Key + " bar baz";
                 var actual = text.GenerateSlug(lower: false);
-                var expected = "foo-" + s.Value + "-bar-baz";
+                var expected = "foo-" + c.Value + "-bar-baz";
 
                 Assert.Equal(expected, actual);
             }
@@ -119,7 +117,7 @@ namespace Slugify.Tests
         [InlineData("mark of ∞", "es", "mark-of-infinito")]
         public void locale_of_infinity_de_es(string input, string locale, string expected)
         {
-            var actual = Slugify.GenerateSlug(input, locale: locale);
+            var actual = input.GenerateSlug(locale: locale);
 
             Assert.Equal(expected, actual);
         }

@@ -105,7 +105,27 @@ namespace SlugifyNet.Tests
         [InlineData("Shopify joins Facebook’s cryptocurrency Libra Association", "shopify-joins-facebook's-cryptocurrency-libra-association")]
         [InlineData("What is a slug and how to optimize it?", "what-is-a-slug-and-how-to-optimize-it")]
         [InlineData("Bitcoin soars past $33,000, its highest ever", "bitcoin-soars-past-dollar33000-its-highest-ever")]
-        public void article_title(string input, string expected)
+        public void slugify_examples(string input, string expected)
+        {
+            var actual = input.GenerateSlug();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData("Best Practices and Considerations for Multilingual Sites", "best-practices-and-considerations-for-multilingual-sites")]
+        [InlineData("Meilleures pratiques et considérations relatives aux sites multilingues", "meilleures-pratiques-et-considerations-relatives-aux-sites-multilingues")]
+        [InlineData("Bewährte Vorgehensweisen und Überlegungen für mehrsprachige Sites", "bewahrte-vorgehensweisen-und-uberlegungen-fur-mehrsprachige-sites")]
+        [InlineData("Considerazioni e procedure consigliate per i siti multilingue", "considerazioni-e-procedure-consigliate-per-i-siti-multilingue")]
+        [InlineData("マルチ言語サイトのベストプラクティスと考慮事項", "マルチ言語サイトのベストプラクティスと考慮事項")]
+        [InlineData("Prácticas recomendadas y consideraciones para sitios multilingüe", "practicas-recomendadas-y-consideraciones-para-sitios-multilingue")]
+        [InlineData("多语言站点的最佳实践和注意事项", "多语言站点的最佳实践和注意事项")]
+        [InlineData("다국어 사이트에 대한 모범 사례 및 고려 사항", "다국어-사이트에-대한-모범-사례-및-고려-사항")]
+        [InlineData("Советы и рекомендации для многоязычных сайтов", "sovety-i-rekomendacii-dlya-mnogoyazychnyh-sajtov")]
+        [InlineData("Melhores práticas e considerações para sites multilíngues", "melhores-praticas-e-consideracoes-para-sites-multilingues")]
+        [InlineData("Các phương pháp hay nhất và cân nhắc cho các trang web đa ngôn ngữ", "cac-phuong-phap-hay-nhat-va-can-nhac-cho-cac-trang-web-dja-ngon-ngu")]
+        [InlineData("แนวปฏิบัติที่ดีที่สุดและข้อควรพิจารณาสำหรับไซต์หลายภาษา", "แนวปฏิบัติที่ดีที่สุดและข้อควรพิจารณาสำหรับไซต์หลายภาษา")]
+        public void slugify_multilingual_examples(string input, string expected)
         {
             var actual = input.GenerateSlug();
 

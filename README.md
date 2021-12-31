@@ -1,4 +1,4 @@
-﻿# SlugifyNet
+# SlugifyNet
 > Converts a string into a slug.
 
 [![Nuget](https://img.shields.io/nuget/v/SlugifyNet)](https://www.nuget.org/packages/SlugifyNet)

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlugifyNet", "SlugifyNet\SlugifyNet.csproj", "{760C2556-66E4-46C2-8294-24B01C3D5A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlugifyNet.Tests", "SlugifyNet.Tests\SlugifyNet.Tests.csproj", "{5705BCB3-8D99-416F-90FB-FE3C311EF998}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{760C2556-66E4-46C2-8294-24B01C3D5A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760C2556-66E4-46C2-8294-24B01C3D5A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760C2556-66E4-46C2-8294-24B01C3D5A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760C2556-66E4-46C2-8294-24B01C3D5A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5705BCB3-8D99-416F-90FB-FE3C311EF998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5705BCB3-8D99-416F-90FB-FE3C311EF998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5705BCB3-8D99-416F-90FB-FE3C311EF998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5705BCB3-8D99-416F-90FB-FE3C311EF998}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9EA1A98-4B2E-473F-A12B-6FB07160523D}
+	EndGlobalSection
+EndGlobal

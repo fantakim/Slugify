@@ -131,15 +131,5 @@ namespace SlugifyNet.Tests
 
             Assert.Equal(expected, actual);
         }
-
-        [Theory]
-        [InlineData("mark of ∞", "de", "mark-of-unendlich")]
-        [InlineData("mark of ∞", "es", "mark-of-infinito")]
-        public void locale_of_infinity_de_es(string input, string locale, string expected)
-        {
-            var actual = input.GenerateSlug(locale: locale);
-
-            Assert.Equal(expected, actual);
-        }
     }
 }

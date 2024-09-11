@@ -131,5 +131,17 @@ namespace SlugifyNet.Tests
 
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData("de", "Größenmaßstäbe", "groessenmassstaebe")]
+        [InlineData("es", "¿Cómo estás?", "como-estas")]
+        [InlineData("fr", "L'été de l'amour", "l'ete-de-l'amour")]
+        [InlineData("vi", "Xin chào thế giới", "xin-chao-the-gioi")]
+        public void slugify_locale_examples(string locale, string input, string expected)
+        {
+            var actual = SlugifyNet.GenerateSlug(input, locale: locale);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -7,7 +6,7 @@ namespace SlugifyNet
 {
     public static class SlugifyNet
     {
-        private static readonly Dictionary<string, string> characters;
+        private static readonly Dictionary<string, string> defaultCharacters;
         private static readonly Dictionary<string, Dictionary<string, string>> locales;
 
         public static string GenerateSlug(this string input, string replacement = "-", string locale = "", bool lower = true, bool trim = true)
@@ -15,12 +14,18 @@ namespace SlugifyNet
             if (string.IsNullOrEmpty(input))
                 return string.Empty;
 
+            // Create a new dictionary for this method call
+            var characters = new Dictionary<string, string>(defaultCharacters);
+
             if (!string.IsNullOrEmpty(locale))
             {
-                // Replace characters based on locales.
-                if (locales.TryGetValue(locale, out Dictionary<string, string> o))
+                // Apply locale-specific replacements
+                if (locales.TryGetValue(locale, out Dictionary<string, string> localeReplacements))
                 {
-                    o.ToList().ForEach(x => characters[x.Key] = x.Value);
+                    foreach (var kvp in localeReplacements)
+                    {
+                        characters[kvp.Key] = kvp.Value;
+                    }
                 }
             }
 
@@ -30,10 +35,10 @@ namespace SlugifyNet
                 var s = c.ToString();
                 s = (s == replacement) ? " " : s;
 
-                // Replace string based on characters.
+                // Replace string based on characters
                 s = characters.TryGetValue(s, out string o) ? o : s;
 
-                // Remove not allowed characters.
+                // Remove not allowed characters
                 s = Regex.Replace(s, @"[^\w\s$*_+~.()'""!\-:@]+", string.Empty);
 
                 sb.Append(s);
@@ -47,7 +52,7 @@ namespace SlugifyNet
             if (lower)
                 slug = slug.ToString().ToLower();
 
-            // Replace spaces with replacement character, treating multiple consecutive spaces as a single space.
+            // Replace spaces with replacement character, treating multiple consecutive spaces as a single space
             slug = Regex.Replace(slug, @"\s+", replacement);
 
             return slug;
@@ -55,7 +60,7 @@ namespace SlugifyNet
 
         static SlugifyNet()
         {
-            characters = new Dictionary<string, string>
+            defaultCharacters = new Dictionary<string, string>
             {
                 { "$", "dollar" },
                 { "%", "percent" },

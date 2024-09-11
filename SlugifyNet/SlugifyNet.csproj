@@ -9,9 +9,9 @@
     <ProjectUrl>https://github.com/fantakim/Slugify</ProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Slugifies a string</Description>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
 </Project>

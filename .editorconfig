@@ -1,0 +1,64 @@
+# 최상위 EditorConfig 파일임을 나타냅니다.
+root = true
+
+# 모든 파일에 대해 기본 설정
+[*]
+charset = utf-8
+indent_style = space # Use soft tabs (spaces) for indentation.
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# C# 파일에 대한 설정
+[*.cs]
+# C# 스타일 설정
+indent_size = 4
+indent_style = space # Use soft tabs (spaces) for indentation.
+dotnet_sort_system_directives_first = true
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+
+# 사용하지 않는 코드에 대한 설정
+dotnet_style_unused_parameters = all:warning
+
+# 명명 규칙
+dotnet_naming_rule.interface_should_begin_with_i.severity = suggestion
+dotnet_naming_rule.interface_should_begin_with_i.symbols = interface
+dotnet_naming_rule.interface_should_begin_with_i.style = prefix_i
+dotnet_naming_symbols.interface.applicable_kinds = interface
+dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal
+dotnet_naming_symbols.interface.required_modifiers = 
+dotnet_naming_style.prefix_i.required_prefix = I
+dotnet_naming_style.prefix_i.capitalization = pascal_case
+
+# 코드 스타일
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_between_query_expression_clauses = true
+
+# 공백 스타일
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+
+# 네임스페이스 설정
+csharp_style_namespace_declarations = file_scoped
+
+# 프로젝트 설정
+[*.csproj]
+indent_style = space
+indent_size = 2
+
+# XML 파일 설정
+[*.xml]
+indent_style = space
+indent_size = 2

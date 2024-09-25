@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31005.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlugifyNet", "SlugifyNet\SlugifyNet.csproj", "{760C2556-66E4-46C2-8294-24B01C3D5A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlugifyNet", "SlugifyNet\SlugifyNet.csproj", "{760C2556-66E4-46C2-8294-24B01C3D5A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlugifyNet.Tests", "SlugifyNet.Tests\SlugifyNet.Tests.csproj", "{5705BCB3-8D99-416F-90FB-FE3C311EF998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlugifyNet.Tests", "SlugifyNet.Tests\SlugifyNet.Tests.csproj", "{5705BCB3-8D99-416F-90FB-FE3C311EF998}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

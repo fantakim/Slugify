@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace SlugifyNet
 {
-    public static class SlugifyNet
+    public static class Slugify
     {
         private static readonly Dictionary<string, string> defaultCharacters;
         private static readonly Dictionary<string, Dictionary<string, string>> locales;
@@ -58,7 +58,7 @@ namespace SlugifyNet
             return slug;
         }
 
-        static SlugifyNet()
+        static Slugify()
         {
             defaultCharacters = new Dictionary<string, string>
             {

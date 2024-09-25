@@ -139,7 +139,7 @@ namespace SlugifyNet.Tests
         [InlineData("vi", "Xin chào thế giới", "xin-chao-the-gioi")]
         public void slugify_locale_examples(string locale, string input, string expected)
         {
-            var actual = SlugifyNet.GenerateSlug(input, locale: locale);
+            var actual = Slugify.GenerateSlug(input, locale: locale);
 
             Assert.Equal(expected, actual);
         }
